@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Notes</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        textarea { width: 100%; height: 150px; }
+        .note { background: #f2f2f2; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>My Notes</h2>
+    <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+    <br><br>
+    <button onclick="addNote()">Add Note</button>
+
+    <div id="notesContainer"></div>
+
+    <script>
+        function addNote() {
+            var text = document.getElementById("noteInput").value;
+            var container = document.getElementById("notesContainer");
+            var div = document.createElement("div");
+            div.className = "note";
+            div.innerText = text;
+            container.appendChild(div);
+        }
+    </script>
+</body>
+</html>
